@@ -88,7 +88,6 @@ RUN cd /comfyui/custom_nodes && \
     git clone https://github.com/kaibioinfo/ComfyUI_AdvancedRefluxControl.git && \
     cd ComfyUI_AdvancedRefluxControl && \
     if [ -f requirements.txt ]; then uv pip install -r requirements.txt; fi
-
 # Set the default command to run when starting the container
 CMD ["/start.sh"]
 # Stage 2: Final image
