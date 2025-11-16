@@ -82,13 +82,14 @@ RUN comfy-node-install comfyui-easy-use
 # Comfyui-In-Context-Lora-Utils
 RUN comfy-node-install comfyui-in-context-lora-utils
 RUN comfy-node-install comfyui-impact-pack
-RUN comfy-node-install bizyair
+
 # Install ComfyUI_AdvancedRefluxControl (not in registry - manual install)
 RUN cd /comfyui/custom_nodes && \
     git clone https://github.com/kaibioinfo/ComfyUI_AdvancedRefluxControl.git && \
     cd ComfyUI_AdvancedRefluxControl && \
     if [ -f requirements.txt ]; then uv pip install -r requirements.txt; fi
 # Set the default command to run when starting the container
+WORKDIR /
 CMD ["/start.sh"]
 # Stage 2: Final image
 FROM base AS final
